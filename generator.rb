@@ -32,7 +32,7 @@ class Pool
 end
 
 unless ARGV.length == 2
-	puts 'Usage: ruby generate2.rb host_address host_ port'
+	puts 'Usage: ruby generator.rb host_address host_ port'
 	exit
 end
 
