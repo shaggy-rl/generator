@@ -3,7 +3,7 @@ require 'socket'
 require_relative 'thread-pool.rb'
 require_relative 'markov-chains.rb'
 
-# Ussage statement and check for proper number of command line arguments
+# Usage statement and check for proper number of command line arguments
 
 unless ARGV.length > 6
 	puts 'Usage: ruby generator.rb host_address host_ port number_threads order number_of_sentences input_file'
@@ -31,12 +31,12 @@ socket = TCPSocket.open(host,port)
 
 markov = MarkovChainer.new(order)
 
-# Create a new thread to read in the file to create dictionary 
+# Read in all input txt files and add them to the Markov Chain  
 
 markov.add_text(ARGF.read)
 
 # Schedule threads from the thread pool to 
-# generate sentences and sent them to the target 
+# generate sentences and send them to the target 
 # listening host
 
 number_sentences.times {
